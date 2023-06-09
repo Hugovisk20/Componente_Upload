@@ -1,0 +1,198 @@
+:root{
+
+    --RoyalBlue: #3261ed91;
+
+    --BlueViolet: #7C3AED;
+    --Majorelle-Blue: #794FED;
+    --MediumSlateBlue: #7A5FEC;
+    --Tropical-Indigo: #AC96E4;
+    --Periwinkle: #C1B2FA;
+    --LavanderWeb: #EBE6FF;
+    --LavanderWeb-2: #E9E3F8;    
+    --Magnolia: #F3F0FF;
+    --GhostWhite: #FBFAFF;
+
+    --Verde3: #43884D;
+    --Verde2: #73B172;
+    --Verde1: #DAF2D9;
+
+    --Vermelho1: #E36363;
+    --Vermelho2: #F2d9d9;
+
+    --Preto: #000;
+    --Davis-gray: #575361;
+    --DimGray: #746E82;
+    --Cool-Gray: #857E95;
+    --Cool-Gray-2: #9892A6;
+    --Silver: #aaa;
+    --Anti-Flash-White: #eee;
+    --Branco: #fff;
+    
+    font-size: 62.5%;
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    background-color: var(--GhostWhite);
+    min-height: 100vh;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    line-height: 130%;
+}
+.app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 44rem;
+    width: 90%;
+    margin: auto;
+}
+.drag-files{
+    position: relative;
+    background-color: var(--Magnolia);
+    border: 0.1rem dashed var(--Periwinkle);
+    border-radius: 0.8rem;
+
+    text-align: center;
+    padding:  2.8rem 0 3.2rem;
+}
+.drag-files input{
+    all: unset;
+    opacity: 0;
+    inset: 0;
+    position: absolute;
+}
+.drag-files i.ph{
+    font-size: 4.8rem;
+    color: var(--BlueViolet);
+}
+.drag-files h3{
+    margin-top: 1.2rem;
+
+    color: var(--MediumSlateBlue);
+    font-size: 1.6rem;
+}
+.drag-files p{
+    font-size: 1.4rem;
+    color: var(--DimGray);
+}
+.drag-files.dragover{
+    background-color: var(--LavanderWeb);
+}
+
+.files{
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.2rem;
+}
+.box{
+    position: relative;
+    display: flex;
+    gap: 1.2rem;
+    padding: 0.8rem;
+
+    background-color: var(--Branco);
+    box-shadow: 0rem 0.4rem 1.6rem var(--LavanderWeb);
+
+    --icon-bg: #eee;
+    --icon-color: #aaa;
+    --progress-color: #000;
+    --progress-text: #999;
+}
+
+/*ICONS*/
+
+.box .icon{
+    background-color: var(--icon-bg);
+    border-radius: 0.4rem;
+
+    display: flex;
+    padding: 1.6rem 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+.box .icon i{
+    font-size: 2.4rem;
+    color: var(--icon-color);
+}
+
+/*INFO*/
+
+.box .info{
+    flex: 1;
+}
+.info .filename{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--Davis-gray);
+}
+.info .filesize{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--Cool-Gray);
+}
+
+/*BAR*/
+
+.bar{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    line-height: 0;
+    margin-top: 0.4rem;
+}
+progress{
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.8rem;
+    border-radius: 100rem;
+    overflow: hidden;
+}
+progress::-webkit-progress-bar{
+    background-color: var(--LavanderWeb);
+}
+progress::-webkit-progress-value{
+    background: var(--progress-color);
+}
+.bar span{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--progress-text);
+}
+
+/*ACTION*/
+
+.action{
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    color: var(--Majorelle-Blue);
+    cursor: pointer;
+}
+
+/*COLORS*/
+
+.uploading{
+    --icon-bg: var(--LavanderWeb-2);
+    --icon-color: var(--Tropical-Indigo);
+    --progress-color: linear-gradient(90deg, var(--RoyalBlue) 0%, var(--Tropical-Indigo) 100%);
+    --progress-text: var(--Cool-Gray-2);
+}
+.done{
+    --icon-bg: var(--Verde1);
+    --icon-color: var(--Verde2);
+    --progress-color: var(--Verde2);
+    --progress-text: var(--Verde3);
+}
+.error{
+    --icon-bg: var(--Vermelho2);
+    --icon-color: var(--Vermelho1);
+    --progress-color: var(--Branco);
+    --progress-text: var(--Vermelho1);
+}
